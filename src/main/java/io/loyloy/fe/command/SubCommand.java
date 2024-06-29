@@ -4,8 +4,7 @@ import io.loyloy.fe.Phrase;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-public abstract class SubCommand
-{
+public abstract class SubCommand {
     private final String name;
 
     private final String permission;
@@ -16,48 +15,37 @@ public abstract class SubCommand
 
     private final CommandType commandType;
 
-    public SubCommand( String name, String permission, String usage, Phrase description, CommandType commandType )
-    {
+    public SubCommand(String name, String permission, String usage, Phrase description, CommandType commandType) {
         this.name = name;
-
         this.permission = permission;
-
         this.usage = usage;
-
         this.description = description;
-
         this.commandType = commandType;
     }
 
-    public String getFirstName()
-    {
-        return name.split( "," )[0];
+    public String getFirstName() {
+        return name.split(",")[0];
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public String getPermission()
-    {
+    public String getPermission() {
         return permission;
     }
 
-    public String getUsage()
-    {
+    public String getUsage() {
         return usage;
     }
 
-    public Phrase getDescription()
-    {
+    public Phrase getDescription() {
         return description;
     }
 
-    public CommandType getCommandType()
-    {
+    public CommandType getCommandType() {
         return commandType;
     }
 
-    public abstract boolean onCommand( CommandSender sender, Command cmd, String commandLabel, String[] args );
+    public abstract boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args);
 }

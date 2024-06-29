@@ -1,14 +1,15 @@
 name: Fe
 main: io.loyloy.fe.Fe
-version: 0.9.2
+version: "${version}"
+description: "An economy plugin"
 load: STARTUP
+api-version: "1.20"
 
 commands:
   fe:
-    usage: /<command> <name>
     description: Checks your balance
-    aliases:
-      - money
+    usage: /<command> <name>
+    aliases: [money, eco]
 
 softdepend:
   - Vault

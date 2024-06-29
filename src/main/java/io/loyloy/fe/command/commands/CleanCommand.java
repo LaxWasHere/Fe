@@ -7,23 +7,17 @@ import io.loyloy.fe.command.SubCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-public class CleanCommand extends SubCommand
-{
+public class CleanCommand extends SubCommand {
     private final Fe plugin;
 
-    public CleanCommand( Fe plugin )
-    {
-        super( "clean", "fe.clean", "clean", Phrase.COMMAND_CLEAN, CommandType.CONSOLE );
-
+    public CleanCommand(Fe plugin) {
+        super("clean", "fe.clean", "clean", Phrase.COMMAND_CLEAN, CommandType.CONSOLE);
         this.plugin = plugin;
     }
 
-    public boolean onCommand( CommandSender sender, Command cmd, String commandLabel, String[] args )
-    {
+    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         plugin.getAPI().clean();
-
-        Phrase.ACCOUNT_CLEANED.sendWithPrefix( sender );
-
+        Phrase.ACCOUNT_CLEANED.sendWithPrefix(sender);
         return true;
     }
 }

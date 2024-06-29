@@ -7,38 +7,30 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class SQLite extends SQLFunctions
-{
+public class SQLite extends SQLFunctions {
     private final Fe plugin;
 
-    public SQLite( Fe plugin )
-    {
-        super( plugin );
+    public SQLite(Fe plugin) {
+        super(plugin);
 
         this.plugin = plugin;
     }
 
-    public Connection getNewConnection()
-    {
-        try
-        {
-            Class.forName( "org.sqlite.JDBC" );
+    public Connection getNewConnection() {
+        try {
+            Class.forName("org.sqlite.JDBC");
 
-            return DriverManager.getConnection( "jdbc:sqlite:" + new File( plugin.getDataFolder(), "database.db" ).getAbsolutePath() );
-        }
-        catch( Exception e )
-        {
+            return DriverManager.getConnection("jdbc:sqlite:" + new File(plugin.getDataFolder(), "database.db").getAbsolutePath());
+        } catch (Exception e) {
             return null;
         }
     }
 
-    public void getConfigDefaults( ConfigurationSection section )
-    {
+    public void getConfigDefaults(ConfigurationSection section) {
 
     }
 
-    public String getName()
-    {
+    public String getName() {
         return "SQLite";
     }
 }

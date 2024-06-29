@@ -1,7 +1,6 @@
 package io.loyloy.fe.command;
 
-public enum CommandType
-{
+public enum CommandType {
     CONSOLE,
     PLAYER,
     CONSOLE_WITH_ARGUMENTS
